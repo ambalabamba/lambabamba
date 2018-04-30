@@ -11,6 +11,7 @@ class AFunStickArenaExperience:
         self.generateAccounts()
  
     def generateAccounts(self):
+        print('started!')
         threading.Timer(1, self.generateAccounts).start()
         Start = 0
         Accounts = []
