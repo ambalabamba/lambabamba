@@ -11,27 +11,30 @@ class AFunStickArenaExperience:
         self.generateAccounts()
  
     def generateAccounts(self):
-        print('started!')
-        threading.Timer(0.0001, self.generateAccounts).start()
-        Start = 0
-        Accounts = []
-        LowerList = ['a', 'b', 'c', 'c', 'e', 'f', 'h', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-        additional = ['a', 'y', 'x', '4', 'p', '3', 'q', 'l', 'k', 'o', 'v']
+        try:
+            print('started!')
+            threading.Timer(0.0001, self.generateAccounts).start()
+            Start = 0
+            Accounts = []
+            LowerList = ['a', 'b', 'c', 'c', 'e', 'f', 'h', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+            additional = ['a', 'y', 'x', '4', 'p', '3', 'q', 'l', 'k', 'o', 'v']
 
-        while Start < self.MaxAmount:
-            Username = ''.join(random.choice(LowerList) for NameLen in range(15)) + ''.join(random.choice(additional) for NameLen in range(5))
-            PostData = {"username": Username, "userpass": self.Password, "usercol": "-99099255", "action": "create"}
-            URLData = requests.post("http://www.xgenstudios.com/stickarena/stick_arena.php", data=PostData).text
+            while Start < self.MaxAmount:
+                Username = ''.join(random.choice(LowerList) for NameLen in range(15)) + ''.join(random.choice(additional) for NameLen in range(5))
+                PostData = {"username": Username, "userpass": self.Password, "usercol": "-99099255", "action": "create"}
+                URLData = requests.post("http://www.xgenstudios.com/stickarena/stick_arena.php", data=PostData).text
  
-            if "success" in URLData:
-                Start += 1
-            else:
-                print("Couldn't create: '" + Username + "'")
-            if Start == self.MaxAmount:
-                print('Successfully made ' + str(self.MaxAmount) + ' accounts.')
-            break
+                if "success" in URLData:
+                    Start += 1
+                else:
+                    print("Couldn't create: '" + Username + "'")
+                if Start == self.MaxAmount:
+                    print('Successfully made ' + str(self.MaxAmount) + ' accounts.')
+                break
  
-        return True
+            return True
+        except Exception:
+            pass
  
     def startGenerator(self):
         Generated = 0
