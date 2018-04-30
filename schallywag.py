@@ -7,12 +7,12 @@ class AFunStickArenaExperience:
     def __init__(self, Password, Amount):
         self.Password = Password
         self.MaxAmount = Amount
- 
+        
+        print("started!")
         self.generateAccounts()
  
     def generateAccounts(self):
         try:
-            print('started!')
             threading.Timer(0.0001, self.generateAccounts).start()
             Start = 0
             Accounts = []
