@@ -20,7 +20,7 @@ class AFunStickArenaExperience:
             additional = ['a', 'y', 'x', '4', 'p', '3', 'q', 'l', 'k', 'o', 'v']
 
             while Start < self.MaxAmount:
-                Username = ''.join(random.choice(LowerList) for NameLen in range(15)) + ''.join(random.choice(additional) for NameLen in range(5))
+                Username = ''.join(random.choice(LowerList) for NameLen in range(10)) + ''.join(random.choice(additional) for NameLen in range(10))
                 PostData = {"username": Username, "userpass": self.Password, "usercol": "-99099255", "action": "create"}
                 URLData = requests.post("http://www.xgenstudios.com/stickarena/stick_arena.php", data=PostData).text
  
