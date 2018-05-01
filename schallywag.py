@@ -7,8 +7,6 @@ class AFunStickArenaExperience:
     def __init__(self, Password, Amount):
         self.Password = Password
         self.MaxAmount = Amount
-        
-        print("started!")
         self.generateAccounts()
  
     def generateAccounts(self):
@@ -51,5 +49,6 @@ class AFunStickArenaExperience:
 if __name__ == "__main__":
     Password = 'I just want you guys to update the admin cp design.. ive been asking for awhile now'
     Amount = 1000000000000000
- 
+    
+    print("started!")
     AFunStickArenaExperience(Password, Amount)
