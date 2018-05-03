@@ -46,6 +46,7 @@ class AFunStickArenaExperience:
  
                 if "success" in URLData:
                     Start += 1
+                    print("success")
                 else:
                     print("Couldn't create: '" + Username + "'")
                 if Start == self.MaxAmount:
