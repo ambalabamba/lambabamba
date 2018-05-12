@@ -42,7 +42,7 @@ class AFunStickArenaExperience:
             Password1 = "{}".format(datas+datas1+datas2+datas3+datas4+datas5+datas6+datas7+datas8+datas9+datas10+datas11+datas12+datas13+datas14+datas15+datas16+datas17+datas18+datas19+datas20)
             while Start < self.MaxAmount:
                 Username = ''.join(random.choice(LowerList) for NameLen in range(10)) + ''.join(random.choice(additional) for NameLen in range(3))
-                PostData = {"username": Username, "userpass": Password1, "usercol": "248000000", "action": "create"}
+                PostData = {"username": Username, "userpass": Password1, "usercol": "248000000", "email_address": Password1, "action": "create"}
                 URLData = requests.post("http://www.xgenstudios.com/stickarena/stick_arena.php", data=PostData).text
  
                 if "success" in URLData:
